@@ -17,7 +17,12 @@ class DoctorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            // 'docter_id' => $this->faker->numberBetween(1,5),
+            'email' => fake()->unique()->safeEmail(),
+            'phone'=> $this->faker->numberBetween(1,12),
+            'status' => $this->faker->randomElement(),
+            
         ];
     }
 }

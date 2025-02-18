@@ -3,8 +3,16 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Admin;
+use App\Models\Booking;
+use App\Models\Department;
 use Illuminate\Database\Seeder;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\AdminSeeder;
+use Database\Seeders\DoctorSeeder;
+use Database\Seeders\BookingSeeder;
+use Database\Seeders\DepartmentSeeder;
+use DeepCopy\Filter\Doctrine\DoctrineEmptyCollectionFilter;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,10 +22,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        User::factory(5)->create();
+        $this->call([
+            AdminSeeder::class,
+            BookingSeeder::class,
+            DepartmentSeeder::class,
+            DoctorSeeder::class,
+        
+    ]);
     }
 }

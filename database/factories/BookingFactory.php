@@ -17,7 +17,11 @@ class BookingFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            
+            'docter_id' => $this->faker->numberBetween(1,5),
+            'user_id'=> $this->faker->numberBetween(1,5),
+            'status' => $this->faker->randomElement(),
+         
         ];
     }
 }

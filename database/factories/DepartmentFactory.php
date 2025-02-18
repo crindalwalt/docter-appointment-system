@@ -17,7 +17,8 @@ class DepartmentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            // 'department_id'=> $this->faker->numberBetween(1,5),
         ];
     }
 }

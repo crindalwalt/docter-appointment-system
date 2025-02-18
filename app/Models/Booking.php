@@ -9,4 +9,13 @@ class Booking extends Model
 {
     /** @use HasFactory<\Database\Factories\BookingFactory> */
     use HasFactory;
+
+    public function user(){
+             return $this->hasMany(User::class);
+    }
+    
+    public function doctor(){
+        return $this->hasMany(Doctor::class);
 }
+}
+

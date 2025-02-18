@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function booking(){
+        return $this->belongsTo(booking::class,"booking_id");
+    }
 }

@@ -47,6 +47,6 @@ class User extends Authenticatable
     }
 
     public function booking(){
-        return $this->belongsTo(booking::class,"booking_id");
+        return $this->hasMany(booking::class);
     }
 }

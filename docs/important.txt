@@ -3,8 +3,13 @@ https://docs.google.com/document/d/14rwRYKChJqLL5HOo0hcB5f4EZbIoPBo_7u_gPyYmVlU/
 
 Assignments
 
-1) Sadaqat + junaid => design complete template for the project
-2) salman => write all the migrations for the project
-3) azeem => write all the relations for the project
+
+17 Feb
+1) Sadaqat + junaid => design complete template for the project ✅
+2) salman => write all the migrations for the project ✅
+3) azeem => write all the relations for the project ✅
 4) bazaid + aashir => write routes for views for the project
 
+18 Feb
+1) Salman => fetch users and doctors in admin side
+2) Azeem => fetch bookings and users in doctor side

@@ -11,11 +11,11 @@ class Booking extends Model
     use HasFactory;
 
     public function user(){
-             return $this->hasMany(User::class);
+             return $this->belongsTo(User::class,"user_id");
     }
-    
+
     public function doctor(){
-        return $this->hasMany(Doctor::class);
+        return $this->belongsTo(Doctor::class,"doctor_id");
 }
 }
 

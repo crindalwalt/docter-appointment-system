@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Models\Admin;
+use App\Models\Doctor;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -13,7 +15,21 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $products =Doctor::all();
+
+        // dd($product->category->name);
+        return view("admin.doctors", [
+            "products" => $products,
+        ]);
+    }
+    public function patients()
+    {
+        $products =User::all();
+
+        // dd($product->category->name);
+        return view("admin.patients", [
+            "products" => $products,
+        ]);
     }
 
     /**

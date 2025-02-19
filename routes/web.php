@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminNavigationController;
 
 Route::view('/', 'patient.home')->name('patient.home');
 Route::view('/doctors', 'patient.doctors')->name('patient.doctors');
@@ -19,8 +22,8 @@ Route::prefix('doctor')->group(function () {
 
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.dashboard')->name('admin.dashboard');
-    Route::view('/doctors', 'admin.doctors')->name('admin.doctors');
-    Route::view('/patients', 'admin.patients')->name('admin.patients');
+    Route::get('/doctors',[AdminController::class,'index'])->name('admin.doctors');
+    Route::get('/patients',[AdminController::class,'patients'])->name('admin.patients');
     Route::view('/appointements', 'admin.appointments')->name('admin.appointements');
     Route::view('/departments', 'admin.departments')->name('admin.departments');
     Route::view('/settings', 'admin.settings')->name('admin.settings');

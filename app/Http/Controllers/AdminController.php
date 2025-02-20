@@ -31,52 +31,20 @@ class AdminController extends Controller
             "products" => $products,
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function appointment (){
+        return view ("admin.appointment");
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreAdminRequest $request)
-    {
-        //
+    public function doctors (){
+        return view ("admin.departments");
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Admin $admin)
-    {
-        //
+    public function setting(){
+        return view ("admin.settings");
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Admin $admin)
-    {
-        //
+    public function dashboard(){
+        return view ("admin.dashboard");
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateAdminRequest $request, Admin $admin)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Admin $admin)
-    {
-        //
-    }
+   
+  
 }
+
+

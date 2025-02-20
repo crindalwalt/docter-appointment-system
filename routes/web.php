@@ -19,7 +19,7 @@ Route::prefix('doctor')->group(function () {
     Route::view('/dashboard', 'doctor.dashboard')->name('doctor.dashboard');
     Route::view('/appointements', 'doctor.appointement')->name('doctor.appointement');
     Route::get('/patients',[DoctorController::class, 'patients'])->name('doctor.patients');
-    Route::view('/settings', 'doctor.settings')->name('doctor.settings');
+    Route::view('/settings', 'doctor.settings')->name('doctor.settin~~gs');
 });
 
 Route::prefix('admin')->group(function () {

@@ -24,7 +24,6 @@
                     <tr class="bg-gray-700">
                         <th class="p-3 border">Patient Name</th>
                         <th class="p-3 border">Email Adress</th>
-                        <th class="p-3 border">Password</th>
                         <th class="p-3 border">Actions</th>
                     </tr>
                 </thead>

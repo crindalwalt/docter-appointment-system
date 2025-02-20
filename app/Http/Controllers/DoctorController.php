@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDoctorRequest;
 use App\Http\Requests\UpdateDoctorRequest;
 use App\Models\Doctor;
+use App\Models\User;
 
 class DoctorController extends Controller
 {
@@ -13,9 +14,10 @@ class DoctorController extends Controller
      */
     public function patients()
     {
-        // $patients = User::all();
+        $patients = User::all();
+        // dd($patients);
         return view("doctor.patients",[
-            // "patients" => $patients,
+            "patients" => $patients,
         ]);
     }
 

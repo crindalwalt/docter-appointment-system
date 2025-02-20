@@ -39,31 +39,50 @@
             <thead>
               <tr class="border-b">
                 <th class="text-left p-2">Patient Name</th>
+                <th class="text-left p-2">Email</th>
                 <th class="text-left p-2">Age</th>
                 <th class="text-left p-2">Gender</th>
-                <th class="text-left p-2">Last Visit</th>
                 <th class="text-left p-2">Status</th>
+                <th class="text-left p-2">Phone number</th>
+
                 <th class="text-left p-2">Action</th>
               </tr>
             </thead>
             <tbody>
+
+               @if($patients->isNotEmpty())
+               @foreach($patients as $items)
+
+
+
+              
+
               <tr class="border-b hover:bg-gray-50">
-                <td class="p-2">Jane Doe</td>
-                <td class="p-2">28</td>
-                <td class="p-2">Female</td>
-                <td class="p-2">2025-02-15</td>
+                <td class="p-2">{{ $items->name }}</td>
+                <td class="p-2">{{ $items->email }}</td>
+                <td class="p-2">{{ $items->age }}</td>
+                <td class="p-2">{{ $items->gender }}</td>
                 <td class="p-2"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Active</span></td>
+                <td><span>{{ $items->phone_number }}</span></td>
                 <td class="p-2">
                   <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">View</button>
                   <button class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 ml-2">Edit</button>
                 </td>
               </tr>
-              <tr class="border-b hover:bg-gray-50">
+              @endforeach
+              @else
+              No data found
+              @endif
+
+
+
+              {{-- <tr class="border-b hover:bg-gray-50">
                 <td class="p-2">John Smith</td>
                 <td class="p-2">35</td>
                 <td class="p-2">Male</td>
                 <td class="p-2">2025-02-10</td>
-                <td class="p-2"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Follow-up</span></td>
+                <td class="p-2"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Active</span></td>
+                <td><span>Phone</span></td>
                 <td class="p-2">
                   <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">View</button>
                   <button class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 ml-2">Edit</button>
@@ -74,12 +93,13 @@
                 <td class="p-2">42</td>
                 <td class="p-2">Female</td>
                 <td class="p-2">2025-02-05</td>
-                <td class="p-2"><span class="bg-red-100 text-red-800 px-2 py-1 rounded">Inactive</span></td>
+                <td class="p-2"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">Active</span></td>
+                <td><span>Phone</span></td>
                 <td class="p-2">
                   <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">View</button>
                   <button class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 ml-2">Edit</button>
                 </td>
-              </tr>
+              </tr> --}}
             </tbody>
           </table>
         </div>

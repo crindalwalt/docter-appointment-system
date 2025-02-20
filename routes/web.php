@@ -17,7 +17,7 @@ Route::view('/about', 'patient.about')->name('patient.about');
 // ================================ /DOCTOR ROUTES\================================
 // =====================================================================================
 Route::prefix('doctor')->group(function () {
-    Route::view('/dashboard', 'doctor.dashboard')->name('doctor.dashboard');
+    Route::view('/', 'doctor.dashboard')->name('doctor.dashboard');
     Route::view('/appointements', 'doctor.appointement')->name('doctor.appointement');
     Route::get('/patients',[DoctorController::class, 'patients'])->name('doctor.patients');
     Route::view('/settings', 'doctor.settings')->name('doctor.settings');

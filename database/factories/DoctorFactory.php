@@ -20,9 +20,9 @@ class DoctorFactory extends Factory
             'name' => $this->faker->name,
             // 'docter_id' => $this->faker->numberBetween(1,5),
             'email' => fake()->unique()->safeEmail(),
-            'phone'=> $this->faker->numberBetween(1,12),
-            'status' => $this->faker->randomElement(),
-            
+            'phone'=> $this->faker->numberBetween(3000000000,3999999999,),
+            'status' => $this->faker->randomElement(['pending','active','cancelled']),
+
         ];
     }
 }

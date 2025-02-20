@@ -11,9 +11,12 @@ class DoctorController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function patients()
     {
-        //
+        // $patients = User::all();
+        return view("doctor.patients",[
+            // "patients" => $patients,
+        ]);
     }
 
     /**

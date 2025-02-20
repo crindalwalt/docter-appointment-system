@@ -14,56 +14,15 @@ class DoctorController extends Controller
     public function patients()
     {
         // $patients = User::all();
-        return view("doctor.patients",[
-            // "patients" => $patients,
-        ]);
+        return view('doctor.patients');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreDoctorRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Doctor $doctor)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Doctor $doctor)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateDoctorRequest $request, Doctor $doctor)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Doctor $doctor)
-    {
-        //
-    }
+public function dashboard(){
+    return view('doctor.dashboard');
+}
+  public function appointment(){
+    return view('doctor.appointement');
+  } 
+  public function settings(){
+    return view('doctor.settings');
+  }
 }

@@ -9,18 +9,18 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
 
 Route::get("/",[UserController::class, 'home'])->name('patient.home');
-Route::view('/doctors', 'patient.doctors')->name('patient.doctors');
-Route::view('/appointment', 'patient.appointment')->name('patient.appointment');
-Route::view('/contact', 'patient.contact')->name('patient.contact');
-Route::view('/about', 'patient.about')->name('patient.about');
+Route::get("/doctors",[UserController::class,'doctors'])->name('patient.doctors');
+Route::get("/appointment",[UserController::class,'appointment'])->name('patient.appointment');
+Route::get("/contact",[UserController::class,'contact'])->name('patient.contact');
+Route::get("/about",[UserController::class,'about'])->name('patient.about');
 // =====================================================================================
 // ================================ /DOCTOR ROUTES\================================
 // =====================================================================================
 Route::prefix('doctor')->group(function () {
-    Route::view('/dashboard', 'doctor.dashboard')->name('doctor.dashboard');
-    Route::view('/appointements', 'doctor.appointement')->name('doctor.appointement');
+    Route::get("/dashboard",[DoctorController::class,'dashboard'])->name('doctor.dashboard');
+    Route::get("/appointment",[DoctorController::class,'appointment'])->name('doctor.appointement');
     Route::get('/patients',[DoctorController::class, 'patients'])->name('doctor.patients');
-    Route::view('/settings', 'doctor.settings')->name('doctor.settings');
+    Route::get("/settings",[DoctorController::class,'settings'])->name('doctor.settings');
 });
 
 Route::prefix('admin')->group(function () {

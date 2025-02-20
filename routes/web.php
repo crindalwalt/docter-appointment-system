@@ -6,8 +6,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminNavigationController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\UserController;
 
-Route::view('/', 'patient.home')->name('patient.home');
+Route::get("/",[UserController::class, 'home'])->name('patient.home');
 Route::view('/doctors', 'patient.doctors')->name('patient.doctors');
 Route::view('/appointment', 'patient.appointment')->name('patient.appointment');
 Route::view('/contact', 'patient.contact')->name('patient.contact');
@@ -19,7 +20,7 @@ Route::prefix('doctor')->group(function () {
     Route::view('/dashboard', 'doctor.dashboard')->name('doctor.dashboard');
     Route::view('/appointements', 'doctor.appointement')->name('doctor.appointement');
     Route::get('/patients',[DoctorController::class, 'patients'])->name('doctor.patients');
-    Route::view('/settings', 'doctor.settings')->name('doctor.settin~~gs');
+    Route::view('/settings', 'doctor.settings')->name('doctor.settings');
 });
 
 Route::prefix('admin')->group(function () {

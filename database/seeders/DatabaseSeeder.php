@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             BookingSeeder::class,
             DepartmentSeeder::class,
             DoctorSeeder::class,
-        
+            PatientsSeeder::class,
+
     ]);
     }
 }

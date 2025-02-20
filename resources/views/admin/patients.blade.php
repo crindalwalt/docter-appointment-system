@@ -24,7 +24,6 @@
                     <tr class="bg-gray-700">
                         <th class="p-3 border">Patient Name</th>
                         <th class="p-3 border">Email Adress</th>
-                        <th class="p-3 border">Password</th>
                         <th class="p-3 border">Actions</th>
                     </tr>
                 </thead>
@@ -38,7 +37,7 @@
                         <td class="p-3">{{$item->password}}</td>
                        
                         <td class="p-3">
-                            <button class="bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded"><i class="fas fa-edit"></i>Conform</button>
+                            <button class="bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded"><i class="fas fa-edit"></i>Confirm</button>
                             <button class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"><i class="fas fa-trash"></i>deleted</button>
                         </td>
                     </tr>

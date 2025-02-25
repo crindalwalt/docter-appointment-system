@@ -12,9 +12,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('patient.home') }}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('patient.appointment') }}">Appointment</a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('patient.doctors') }}">Doctors</a>
                     </li>

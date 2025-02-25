@@ -13,6 +13,48 @@ class DepartmentSeeder extends Seeder
      */
     public function run(): void
     {
-        Department::factory(50)->create();
+        // Department::factory(50)->create();
+
+
+        Department::create([
+            'name' => 'Cardiology Department',
+        ]);
+
+        Department::create([
+            'name' => 'Neurology Department',
+        ]);
+
+        Department::create([
+            'name' => 'Orthopedics Department',
+        ]);
+
+        Department::create([
+            'name' => 'Pediatrics Department',
+        ]);
+
+        Department::create([
+            'name' => 'Oncology Department',
+        ]);
+
+        Department::create([
+            'name' => 'Emergency Medicine Department',
+        ]);
+
+        Department::create([
+            'name' => 'Gynecology and Obstetrics Department',
+        ]);
+
+        Department::create([
+            'name' => 'Radiology Department',
+        ]);
+
+        Department::create([
+            'name' => 'General Surgery Department',
+        ]);
+
+        Department::create([
+            'name' => 'Dermatology Department',
+        ]);
+
     }
 }

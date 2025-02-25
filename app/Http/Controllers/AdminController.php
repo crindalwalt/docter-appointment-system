@@ -32,7 +32,7 @@ class AdminController extends Controller
         ]);
     }
     public function appointment (){
-        return view ("admin.appointment");
+        return view ("admin.appointments");
     }
     public function doctors (){
         return view ("admin.departments");
@@ -43,8 +43,8 @@ class AdminController extends Controller
     public function dashboard(){
         return view ("admin.dashboard");
     }
-   
-  
+
+
 }
 
 

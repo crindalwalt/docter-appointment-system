@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use View;
 
@@ -11,11 +12,13 @@ class UserController extends Controller
         return view("patient.home");
     }
 public function doctors(){
-    return view('patient.doctors');
+    $data['doctors'] = Doctor::all();
+    return view('patient.doctors')->with($data);
 }
-public function appointment(){
+public function appointment(Doctor $doctor){
+
     return view('patient.appointment');
-} 
+}
 public function contact(){
     return view('patient.contact');
 }

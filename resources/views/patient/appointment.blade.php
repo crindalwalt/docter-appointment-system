@@ -19,6 +19,8 @@
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-4">Appointment Details</h4>
+
+                        <!-- TODO: make the form functional and add hiden field for doctor (Sadaqat) -->
                         <form>
                             <!-- Personal Information -->
                             <div class="row mb-4">
@@ -42,7 +44,7 @@
 
                             <!-- Appointment Details -->
                             <div class="row mb-4">
-                                <div class="col-md-6 mb-3">
+                                {{-- <div class="col-md-6 mb-3">
                                     <label class="form-label">Department</label>
                                     <select class="form-select" required>
                                         <option value="">Select Department</option>
@@ -63,7 +65,7 @@
                                         <option>Dr. Emily Brown</option>
                                         <option>Dr. James Wilson</option>
                                     </select>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Preferred Date</label>
                                     <input type="date" class="form-control" required>
@@ -106,6 +108,43 @@
             <!-- Sidebar -->
             <div class="col-lg-4 mt-4 mt-lg-0">
                 <!-- Opening Hours -->
+                <!-- TODO: fetch doctor data form controller and make this dynamics -->
+                <div class="col-md-12 col-lg-12">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEA73ktz7L0PvXzdnY7sIHOjEApM_dU8iLKA&s" class="card-img-top" alt="Doctor">
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-3">Neurology</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <h4 class="fw-bold mb-1">Dr. Michael Chen</h4>
+                                <p class="text-muted mb-2">Neurologist</p>
+                                <div class="d-flex justify-content-center gap-2 mb-3">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star text-warning"></i>
+                                    <span class="ms-1">(89 reviews)</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row text-center mb-3">
+                                <div class="col">
+                                    <p class="text-muted mb-1">Experience</p>
+                                    <p class="fw-bold mb-0">12+ Years</p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-muted mb-1">Patients</p>
+                                    <p class="fw-bold mb-0">8,000+</p>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-outline-primary">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
                         <h5 class="fw-bold mb-3"><i class="bi bi-clock me-2 text-primary"></i>Opening Hours</h5>

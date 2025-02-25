@@ -17,7 +17,7 @@
                     <li><a href="{{ route('patient.about') }}" class="text-white text-decoration-none">About Us</a></li>
                     <li><a href="{{ route('patient.contact') }}" class="text-white text-decoration-none">Our Services</a></li>
                     <li><a href="{{ route('patient.doctors') }}" class="text-white text-decoration-none">Find a Doctor</a></li>
-                    <li><a href="{{ route('patient.appointment') }}" class="text-white text-decoration-none">Appointments</a></li>
+                    <li><a href="{{ route('patient.doctors') }}" class="text-white text-decoration-none">Appointments</a></li>
                 </ul>
             </div>
             <div class="col-lg-3">

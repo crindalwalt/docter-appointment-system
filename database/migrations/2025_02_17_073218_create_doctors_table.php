@@ -22,7 +22,10 @@ return new class extends Migration
             $table->string("email");
             $table->string("phone");
             $table->string("speciality");
-            $table->string("slug");
+            $table->string("slug"); 
+            $table->string("experience");
+            $table->string("rating");
+            $table->string("image");
             $table->string("department_id");
             $table->string("status",["pending","active","cancelled"])->default("pending");
             $table->timestamps();

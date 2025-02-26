@@ -8,7 +8,7 @@
                     <h1 class="display-4 fw-bold mb-4">Your Health Is Our Top Priority</h1>
                     <p class="lead mb-4">Experience world-class healthcare with our team of expert doctors. Book appointments, access medical records, and get 24/7 support.</p>
                     <div class="d-flex gap-3">
-                        <a href="{{ route('patient.appointment') }}" class="btn btn-light btn-lg">Book Appointment</a>
+                        <a href="#" class="btn btn-light btn-lg">Book Appointment</a>
                         <button class="btn btn-outline-light btn-lg">Learn More</button>
                     </div>
                 </div>

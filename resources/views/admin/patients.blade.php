@@ -34,7 +34,7 @@
                     <tr class="border hover:bg-gray-700 transition">
                         <td class="p-3 flex items-center gap-2"><img src="https://via.placeholder.com/40" class="rounded-full" alt="">{{$item->name}}</td>
                         <td class="p-3">{{$item->email}}</td>
-                        <td class="p-3">{{$item->password}}</td>
+                       
                        
                         <td class="p-3">
                             <button class="bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded"><i class="fas fa-edit"></i>Confirm</button>

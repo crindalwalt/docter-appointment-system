@@ -38,9 +38,20 @@
                         <td class="p-3 flex items-center gap-2"><img src="https://via.placeholder.com/40" class="rounded-full" alt=""> {{$item->name}}</td>
                         <td class="p-3">{{$item->email}}</td>
                         <td class="p-3">{{$item->phone}}</td>
-                        <td class="p-3"><span class="bg-green-500 px-3 py-1 rounded">{{$item->status}}</span></td>
                         <td class="p-3">
-                            <button class="bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded"><i class="fas fa-edit"></i>confirm</button>
+                            
+                        @if($item->status == 'pending')
+                        <span class="bg-yellow-500 px-3 py-1 rounded">{{$item->status}}</span>
+
+                        @elseif($item->status == 'active')
+                        <span class="bg-green-500 px-3 py-1 rounded">{{$item->status}}</span>
+                        @elseif($item->status == 'cancelled')
+                        <span class="bg-red-500 px-3 py-1 rounded">{{$item->status}}</span>
+                        @endif
+                    
+                    </td>
+                        <td class="p-3">
+                            <button class=" bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded"><i class="fas fa-edit"></i>confirm</button>
                             <button class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"><i class="fas fa-trash"></i>deleted</button>
                         </td>
                     </tr>

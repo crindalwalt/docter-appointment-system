@@ -20,25 +20,39 @@
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-4">Appointment Details</h4>
 
-                        <!-- TODO: make the form functional and add hiden field for doctor (Sadaqat) -->
-                        <form>
+                        <!-- Done: make the form functional and add hiden field for doctor (Sadaqat) -->`
+                        <form action="{{ route("user.appointment.book") }}" method="POST" >
+                            @csrf
                             <!-- Personal Information -->
                             <div class="row mb-4">
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">First Name</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" required name="first_name">
+                                    @error("first_name")
+                                        <div class="text-danger mb-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" required name="last_name">
+                                    @error("last_name")
+                                        <div class="text-danger mb-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" required>
+                                    <input type="email" class="form-control" required name="email_address">
+                                    @error("email_address")
+                                        <div class="text-danger mb-2">{{ $message }}</div>
+                                    @enderror
+
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" required>
+                                    <input type="tel" class="form-control" required name="phone_number">
+                                    @error("phone_number")
+                                        <div class="text-danger mb-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -68,18 +82,19 @@
                                 </div> --}}
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label">Preferred Date</label>
-                                    <input type="date" class="form-control" required>
+                                    <input type="datetime-local" class="form-control" required name="time">
+                                    @error("time")
+                                        <div class="text-danger mb-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label">Preferred Time</label>
-                                    <select class="form-select" required>
-                                        <option value="">Select Time Slot</option>
-                                        <option>09:00 AM</option>
-                                        <option>10:00 AM</option>
-                                        <option>11:00 AM</option>
-                                        <option>02:00 PM</option>
-                                        <option>03:00 PM</option>
-                                        <option>04:00 PM</option>
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-select" required  name="gender">
+                                        <option  disabled>Select your Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="doesnot_mentioned">Rather not to say</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -87,12 +102,15 @@
                             <!-- Medical Information -->
                             <div class="mb-4">
                                 <label class="form-label">Reason for Visit</label>
-                                <textarea class="form-control" rows="3" required></textarea>
+                                <textarea class="form-control" rows="3" required name="description"></textarea>
+                                @error("description")
+                                        <div class="text-danger mb-2">{{ $message }}</div>
+                                    @enderror
                             </div>
 
                             <div class="mb-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="newPatient">
+                                    <input class="form-check-input" type="checkbox" id="newPatient" name="new_patient">
                                     <label class="form-check-label" for="newPatient">
                                         I am a new patient
                                     </label>
@@ -108,40 +126,41 @@
             <!-- Sidebar -->
             <div class="col-lg-4 mt-4 mt-lg-0">
                 <!-- Opening Hours -->
-                <!-- TODO: fetch doctor data form controller and make this dynamics -->
+                <!-- Done: fetch doctor data form controller and make this dynamics -->
                 <div class="col-md-12 col-lg-12">
                     <div class="card border-0 shadow-sm h-100">
                         <div class="position-relative">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEA73ktz7L0PvXzdnY7sIHOjEApM_dU8iLKA&s" class="card-img-top" alt="Doctor">
-                            <span class="badge bg-primary position-absolute top-0 end-0 m-3">Neurology</span>
+                            <img src="{{ $doctor->image }}" class="card-img-top" alt="Doctor">
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-3">{{ $doctor->department->name }}</span>
                         </div>
                         <div class="card-body">
                             <div class="text-center mb-3">
-                                <h4 class="fw-bold mb-1">Dr. Michael Chen</h4>
-                                <p class="text-muted mb-2">Neurologist</p>
+                                <h4 class="fw-bold mb-1">{{ $doctor->name }}</h4>
+                                <p class="text-muted mb-2">{{ $doctor->speciality }}</p>
                                 <div class="d-flex justify-content-center gap-2 mb-3">
+                                    @for($i = 0; $i < $doctor->rating; $i++)
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    @endfor
+
+                                    {{-- <i class="bi bi-star-fill text-warning"></i>
                                     <i class="bi bi-star-fill text-warning"></i>
                                     <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star text-warning"></i>
-                                    <span class="ms-1">(89 reviews)</span>
+                                    <i class="bi bi-star text-warning"></i> --}}
+                                    {{-- <span class="ms-1">(89 reviews)</span> --}}
                                 </div>
                             </div>
                             <hr>
                             <div class="row text-center mb-3">
                                 <div class="col">
                                     <p class="text-muted mb-1">Experience</p>
-                                    <p class="fw-bold mb-0">12+ Years</p>
+                                    <p class="fw-bold mb-0">{{ $doctor->experience }} Years</p>
                                 </div>
                                 <div class="col">
                                     <p class="text-muted mb-1">Patients</p>
                                     <p class="fw-bold mb-0">8,000+</p>
                                 </div>
                             </div>
-                            <div class="d-grid gap-2">
-                                <a href="#" class="btn btn-outline-primary">View Profile</a>
-                            </div>
+
                         </div>
                     </div>
                 </div>

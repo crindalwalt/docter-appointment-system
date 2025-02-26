@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer('docter_id');
             $table->integer('user_id');
+            $table->dateTime('booking_time');
+            $table->boolean('new_patient')->default(true);
+            $table->longText('description')->nullable();
             $table->string("status",["pending","active","cancelled"])->default("pending");
             $table->timestamps();
         });

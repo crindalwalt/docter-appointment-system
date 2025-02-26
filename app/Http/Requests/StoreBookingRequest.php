@@ -11,7 +11,7 @@ class StoreBookingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,17 @@ class StoreBookingRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
-            //
+            "first_name" => ['required','string'],
+            "last_name" => ['required','string'],
+            "email_address" => ['required','string',"unique:users"],
+            "phone_number" => ['required','string',"unique:users"],
+            "time" =>  ['required'],
+            "description" => ['required','string'],
+            "gender" => ['required'],
+            "new_patient" => ['nullable'],
+
         ];
     }
 }

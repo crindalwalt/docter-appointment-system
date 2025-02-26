@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // =====================================================================================
 // ================================ /ADMIN ROUTES\================================
 // =====================================================================================
-
+// TODO: salman will fetch and display the appointment data to admin panel
 Route::prefix('admin')->group(function () {
     Route::get("/",function (){
         return redirect()->route("admin.dashboard");

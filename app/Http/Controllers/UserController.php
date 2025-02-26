@@ -16,8 +16,8 @@ public function doctors(){
     return view('patient.doctors')->with($data);
 }
 public function appointment(Doctor $doctor){
-
-    return view('patient.appointment');
+    $data['doctor'] = $doctor;
+    return view('patient.appointment')->with($data);
 }
 public function contact(){
     return view('patient.contact');

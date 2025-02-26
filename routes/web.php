@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminNavigationController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
 
@@ -13,9 +14,10 @@ Route::get("/doctors/{doctor:slug}/appointment",[UserController::class,'appointm
 Route::get("/contact",[UserController::class,'contact'])->name('patient.contact');
 Route::get("/about",[UserController::class,'about'])->name('patient.about');
 
+# book an appointment
+Route::post("/doctor/appointment",[BookingController::class,'store'])->name("user.appointment.book");
 
-
-
+// TODO: azeem will create user dashboard
 
 
 Route::get('/dashboard', function () {

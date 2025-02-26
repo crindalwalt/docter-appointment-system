@@ -41,7 +41,6 @@ class DoctorFactory extends Factory
         return [
             'image'=> "https://picsum.photos/300/300",
             'name' => $this->faker->name,
-            // 'docter_id' => $this->faker->numberBetween(1,5),
             "speciality" => $this->faker->randomElement($doctorSpecialties),
             'department_id' => $this->faker->numberBetween(1, 10),
             'experience' => $this->faker->numberBetween(1, 10),

@@ -59,9 +59,9 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="card border-0 shadow-sm h-100">
                             <div class="position-relative">
-                                <img src="https://picsum.photos/300/300"
-                                    class="card-img-top" alt="Doctor">
-                                <span class="badge bg-primary position-absolute top-0 end-0 m-3">{{ $item->department->name }}</span>
+                                <img src="https://picsum.photos/300/300" class="card-img-top" alt="Doctor">
+                                <span
+                                    class="badge bg-primary position-absolute top-0 end-0 m-3">{{ $item->department->name }}</span>
                             </div>
                             <div class="card-body">
                                 <div class="text-center mb-3">
@@ -88,7 +88,8 @@
                                     </div>
                                 </div>
                                 <div class="d-grid gap-2">
-                                    <a href="{{ route("patient.appointment",$item->slug) }}" class="btn btn-primary">Book Appointment</a>
+                                    <a href="{{ route('patient.appointment', $item->slug) }}"
+                                        class="btn btn-primary">Book Appointment</a>
                                     <a href="#" class="btn btn-outline-primary">View Profile</a>
                                 </div>
                             </div>
@@ -96,8 +97,15 @@
                     </div>
                 @endforeach
             @else
-                <!-- TODO:  junaid fix the no show design -->
-                No data to show
+                <!-- Done:  junaid fix the no show design -->
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">No Doctors Found</h4>
+                    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a
+                        bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                    <hr>
+                    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and
+                        tidy.</p>
+                </div>
             @endif
 
             {{-- <!-- Doctor Card 2 -->

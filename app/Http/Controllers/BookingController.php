@@ -29,7 +29,15 @@ class BookingController extends Controller
      */
     public function store(StoreBookingRequest $request)
     {
-        //
+        // TODO: bazaid will save the booking request to two tables
+        // dd($request->all());
+        // first save user
+
+
+        // then save booking
+
+
+        // then redirect
     }
 
     /**

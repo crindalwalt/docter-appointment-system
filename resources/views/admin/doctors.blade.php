@@ -51,8 +51,8 @@
                     
                     </td>
                         <td class="p-3">
-                            <button class=" bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded"><i class="fas fa-edit"></i>confirm</button>
-                            <button class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"><i class="fas fa-trash"></i>deleted</button>
+                            <button class=" bg-yellow-500 hover:bg-yellow-600 px-3 py-1 rounded"><i class="fas fa-edit">Confirm</i></button>
+                            <button class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"><i class="fas fa-trash">deleted</i></button>
                         </td>
                     </tr>
                     @endforeach

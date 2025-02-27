@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookingController;
+use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,7 +18,7 @@ Route::prefix('admin')->group(function () {
     Route::get("/dashboard",[AdminController::class,'dashboard'])->name('admin.dashboard');
     Route::get('/doctors',[AdminController::class,'index'])->name('admin.doctors');
     Route::get('/patients',[AdminController::class,'patients'])->name('admin.patients');
-    Route::get("/appointment",[AdminController::class,'appointment'])->name('admin.appointements');
+    Route::get("/appointment",[BookingController::class,'appointment'])->name('admin.appointements');
     Route::get("/departments",[AdminController::class,'departments'])->name('admin.departments');
     Route::get("/setting",[AdminController::class,'setting'])->name('admin.settings');
 });

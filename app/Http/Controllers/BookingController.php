@@ -15,6 +15,17 @@ class BookingController extends Controller
     {
         //
     }
+    public function appointment()
+    {
+        $product = booking::all();
+        return view( 'admin.appointments',
+            [
+                "product" =>  $product,
+
+            ]
+
+        );
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -13,7 +13,7 @@ class DoctorSeeder extends Seeder
      */
     public function run(): void
     {
-        // Doctor::factory(50)->create();
+        Doctor::factory(50)->create();
         //TODO: aashir will save 10 real doctor data with realtions and images
 
     }

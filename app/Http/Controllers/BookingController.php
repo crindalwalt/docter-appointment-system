@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
 use App\Models\Booking;
+use App\Models\User;
 
 class BookingController extends Controller
 {
@@ -29,10 +30,14 @@ class BookingController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *
+     *     $data['doctors'] = Doctor::all();
+    return view('patient.doctors')->with($data);
      */
-    public function create()
+    public function dashboard()
     {
-        //
+        $data['dashboard'] = user::all();
+         return view("patient.dashboard")->with($data);
     }
 
     /**

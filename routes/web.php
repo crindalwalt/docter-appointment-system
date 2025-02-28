@@ -8,6 +8,12 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\UserController;
 
+Route::prefix('patient')->group(function () {
+    Route::post("/dashboard",[BookingController::class,'dashboard'])->name("patient.dashboard");
+
+});
+
+
 Route::get("/",[UserController::class, 'home'])->name('patient.home');
 Route::get("/doctors",[UserController::class,'doctors'])->name('patient.doctors');
 Route::get("/doctors/{doctor:slug}/appointment",[UserController::class,'appointment'])->name('patient.appointment');

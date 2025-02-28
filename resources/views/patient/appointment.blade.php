@@ -21,7 +21,7 @@
                         <h4 class="fw-bold mb-4">Appointment Details</h4>
 
                         <!-- Done: make the form functional and add hiden field for doctor (Sadaqat) -->`
-                        <form action="{{ route("user.appointment.book") }}" method="POST" >
+                        <form action="{{ route("patient.dashboard") }}" method="POST" >
                             @csrf
                             <!-- Personal Information -->
                             <div class="row mb-4">
